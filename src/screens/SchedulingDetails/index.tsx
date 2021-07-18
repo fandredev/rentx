@@ -4,6 +4,7 @@ import { BackButton } from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
 
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 import speedSvg from "../../assets/speed.svg";
 import accelerationSvg from "../../assets/acceleration.svg";
@@ -43,8 +44,12 @@ import { useTheme } from "styled-components";
 
 export function SchedulingDetails() {
   const theme = useTheme();
-  const { colors } = theme;
+  const navigation = useNavigation();
 
+  const { colors } = theme;
+  function handleConfirmRental() {
+    navigation.navigate("SchedulingComplete");
+  }
   return (
     <Container>
       <Header>
@@ -104,7 +109,11 @@ export function SchedulingDetails() {
         </RentalPrice>
       </Content>
       <Footer>
-        <Button title="Alugar agora" color={colors.success} />
+        <Button
+          title="Alugar agora"
+          color={colors.success}
+          onPress={handleConfirmRental}
+        />
       </Footer>
     </Container>
   );
