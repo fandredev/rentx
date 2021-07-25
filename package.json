@@ -5,6 +5,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
+    "server": "npx json-server src/services/server.json --host 192.168.1.52 --port 3333 --delay 700",
     "test": "jest"
   },
   "dependencies": {
@@ -13,11 +14,13 @@
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
+    "axios": "^0.21.1",
     "expo": "~41.0.1",
     "expo-app-loading": "^1.1.2",
     "expo-font": "~9.1.0",
     "expo-splash-screen": "~0.10.2",
     "expo-updates": "~0.5.4",
+    "json-server": "^0.16.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
