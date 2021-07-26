@@ -23,8 +23,9 @@ export function Home(): JSX.Element {
   const [loading, setLoading] = useState(true)
   
   const navigation = useNavigation();
-  function handleCarDetails() {
-    navigation.navigate("CardDetails");
+
+  function handleCarDetails(car: CarDTO) {
+    navigation.navigate("CardDetails", { car });
   }
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export function Home(): JSX.Element {
         data={cars}
         keyExtractor={(item: CarDTO) => item.id}
         renderItem={({ item }) => (
-          <Car data={item} onPress={handleCarDetails} />
+          <Car data={item} onPress={() => handleCarDetails(item)} />
         )}
       />
       )}
