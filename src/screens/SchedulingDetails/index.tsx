@@ -53,6 +53,7 @@ export function SchedulingDetails() {
   const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>(
     {} as RentalPeriod
   );
+  const [loading, setLoading] = useState(false);
   const theme = useTheme();
   const navigation = useNavigation();
   const route = useRoute();
@@ -88,7 +89,10 @@ export function SchedulingDetails() {
         unavailable_dates,
       })
       .then(() => navigation.navigate("SchedulingComplete"))
-      .catch(() => Alert.alert("Não foi possível confirmar o agendamento."));
+      .catch(() => {
+        Alert.alert("Não foi possível confirmar o agendamento.");
+        setLoading(false);
+      });
   }
   useEffect(() => {
     setRentalPeriod({
@@ -159,6 +163,8 @@ export function SchedulingDetails() {
           title="Alugar agora"
           color={colors.success}
           onPress={handleConfirmRental}
+          enabled={!loading}
+          loading={loading}
         />
       </Footer>
     </Container>
