@@ -25,18 +25,18 @@ import { CarDTO } from "../../dtos/CarDTO";
 import { getAccessoryIcon } from "../../utils/getAccessoryIcon";
 
 interface Params {
-  car: CarDTO
+  car: CarDTO;
 }
 export function CardDetails() {
   const navigation = useNavigation();
-  const route = useRoute()
-  const { car } = route.params as Params
+  const route = useRoute();
+  const { car } = route.params as Params;
 
   function handleConfirmRental() {
-    navigation.navigate("Scheduling");
+    navigation.navigate("Scheduling", { car });
   }
-  function handleGoBack(){
-    navigation.goBack()
+  function handleGoBack() {
+    navigation.goBack();
   }
   return (
     <Container>
@@ -44,9 +44,7 @@ export function CardDetails() {
         <BackButton onPress={() => handleGoBack()} />
       </Header>
       <CarImages>
-        <ImageSlider
-          imagesUrl={car.photos}
-        />
+        <ImageSlider imagesUrl={car.photos} />
       </CarImages>
       <Content>
         <Details>
@@ -61,11 +59,13 @@ export function CardDetails() {
           </Rent>
         </Details>
         <Accessories>
-          {
-            car.accessories.map(accessory => (
-              <Accessory key={accessory.type} name={accessory.name} icon={getAccessoryIcon(accessory.type)} />
-            ))
-          }
+          {car.accessories.map((accessory) => (
+            <Accessory
+              key={accessory.type}
+              name={accessory.name}
+              icon={getAccessoryIcon(accessory.type)}
+            />
+          ))}
         </Accessories>
         <About>{car.about}</About>
       </Content>

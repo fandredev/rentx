@@ -45,7 +45,7 @@ export const Name = styled.Text`
   font-size: ${RFValue(25)}px;
 `;
 export const Rent = styled.View``;
-export const Acessories = styled.View`
+export const Accessories = styled.View`
   width: 100%;
   flex-flow: row wrap;
   align-items: center;
