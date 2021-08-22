@@ -8801,6 +8801,11 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.9.tgz#8a595135def9592bda69709474f1cbeea7c2467f"
   integrity sha512-Ki212dKK4ogX+xDo4CtOZBVIwhsKBEfsEEcwmJfLQzirgc2jIWdzg40Unxz/HzEUqM1WFzVlQSMF9kZZ2HboLQ==
 
+splash-screen@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/splash-screen/-/splash-screen-4.0.1.tgz#1fd1676dc4af06d76168a102ffa04353498613ee"
+  integrity sha512-qk0oEKe5mWCLeHfRbVOkFDA/FweydoERzhlDOSY3aoV0/36a4kp8jLwRYO13ZVefFJ8mz4Szy00vJF6q5U6UHQ==
+
 split-on-first@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/split-on-first/-/split-on-first-1.1.0.tgz#f610afeee3b12bce1d0c30425e76398b78249a5f"
